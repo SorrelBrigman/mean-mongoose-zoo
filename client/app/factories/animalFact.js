@@ -1,9 +1,9 @@
-app.factory('AnimalFact', function($http) { 
+app.factory('AnimalFact', function($http) {
 
   return {
     getAll: function() {
         return new Promise((resolve, reject) =>{
-          $http.get(`http://localhost:3000/api/allAnimals`)
+          $http.get(`http://localhost:3000/animals`)
             .then((data) => {
               resolve(data.data)
             })
@@ -11,7 +11,7 @@ app.factory('AnimalFact', function($http) {
       },
     add: function(newAnimal) {
       return new Promise((resolve, reject) =>{
-        $http.post(`http://localhost:3000/api/addAnimal`, newAnimal)
+        $http.post(`http://localhost:3000/addAnimal`, newAnimal)
           .then((data) => {
             resolve(data)
           })
@@ -20,7 +20,7 @@ app.factory('AnimalFact', function($http) {
 
     remove: function(id) {
       return new Promise((resolve,reject) => {
-        $http.delete(`http://localhost:3000/api/removeAnimal/${id}`)
+        $http.delete(`http://localhost:3000/animals/${id}`)
           .then((data) => {
             resolve()
           })
@@ -29,12 +29,12 @@ app.factory('AnimalFact', function($http) {
 
     update: (id, updateInfo) => {
       return new Promise((resolve, reject) => {
-        $http.patch(`http://localhost:3000/api/updateAnimal/${id}`, updateInfo)
+        $http.patch(`http://localhost:3000/animals/${id}`, updateInfo)
         .then((data) => {
           resolve()
         })
         .catch((err) => console.log("err:", err))
       })
-    } 
+    }
   }
 });
