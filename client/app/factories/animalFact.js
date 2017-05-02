@@ -5,6 +5,7 @@ app.factory('AnimalFact', function($http) {
         return new Promise((resolve, reject) =>{
           $http.get(`http://localhost:3000/animals`)
             .then((data) => {
+              console.log(data.data)
               resolve(data.data)
             })
         })

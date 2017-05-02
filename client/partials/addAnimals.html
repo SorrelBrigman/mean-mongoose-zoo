@@ -9,8 +9,8 @@
     <label for="age">Age</label>
     <input type="number" ng-model="newAnimal.age" placeholder="3" name="age">
     <div ng-repeat="zookeeper in zookeepers">
-      <input type="checkbox" name={{keeper.name}} value={{keeper.name}} ng-model="zookeeper.checked">
-      <label for={{zookeeper.name}}>{{keeper.name}}</label>
+      <input type="checkbox" name={{zookeeper.name}} value={{zookeeper.name}} ng-model="zookeeper.checked">
+      <label for={{zookeeper.name}}>{{zookeeper.name}}</label>
     </div>
     <input type="button" value="add animal" ng-click="addAnimal()">
   </div>
@@ -27,10 +27,10 @@
 
 <h1>Delete Zookeepers Here</h1>
 <fieldset>
-  <div ng-repeat="keeper in keepers">
+  <div ng-repeat="zookeeper in zookeepers">
     <div>
-      <p class="zookeeperDeleteName" for={{keeper.name}}>{{keeper.name}}</p>
-      <input class="deleteZookeeperButton" type="button" name="" value="delete" ng-click="deleteZookeeper(keeper._id)">
+      <p class="zookeeperDeleteName" for={{zookeeper.name}}>{{zookeeper.name}}</p>
+      <input class="deleteZookeeperButton" type="button" name="" value="delete" ng-click="deleteZookeeper(zookeeper._id)">
     </div>
   </div>
 </fieldset>
