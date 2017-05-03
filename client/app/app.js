@@ -1,6 +1,6 @@
 const app = angular.module('Zoo', ['ngRoute'])
 
-app.config(['$routeProvider', function($routeProvider){
+app.config(['$routeProvider', function($routeProvider, $locationProvider){
       $routeProvider
       .when('/', {
         templateUrl: 'partials/home.html',
